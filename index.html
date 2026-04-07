@@ -194,7 +194,15 @@
       .menu button{ padding: 14px; }
       .bigWrap{ min-height: 420px; }
     }
-    .actions {
+    .actions-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: sans-serif;
+}
+
+/* Button row */
+.actions {
   display: flex;
   align-items: center;
   gap: 20px; /* space between groups */
@@ -203,7 +211,7 @@
 
 .group {
   display: flex;
-  gap: 10px; /* space between buttons */
+  gap: 10px;
 }
 
 button {
@@ -219,33 +227,40 @@ button.primary {
   background-color: #4CAF50;
   color: white;
 }
-
-button.primary:hover {
-  background-color: #45a049;
-}
+button.primary:hover { background-color: #45a049; }
 
 button.danger {
   background-color: #f44336;
   color: white;
 }
-
-button.danger:hover {
-  background-color: #da190b;
-}
+button.danger:hover { background-color: #da190b; }
 
 button:not(.primary):not(.danger) {
   background-color: #e0e0e0;
 }
-
 button:not(.primary):not(.danger):hover {
   background-color: #d5d5d5;
 }
 
-.divider {
+/* Vertical divider only between button groups */
+.divider-vertical {
   width: 1px;
   background-color: #ccc;
   height: 36px; /* match button height */
-  margin: 0 10px;
+  margin: 0 10px; /* spacing from buttons */
+}
+
+/* Horizontal dividers */
+.divider-horizontal {
+  height: 1px;
+  background-color: #ccc;
+  width: 100%;
+  margin: 10px 0; /* spacing around line */
+}
+
+/* Copy message section */
+.copy-message {
+  padding: 10px 0;
 }
   </style>
 </head>
