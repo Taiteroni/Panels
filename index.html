@@ -775,6 +775,17 @@ After that finishes, try the step again and tap Done.`;
         }, 200);
         issuesMenuEl.appendChild(btn);
       });
+      // ✅ "That didn’t work" fallback button
+const fallbackBtn = document.createElement("button");
+fallbackBtn.textContent = "That didn’t work";
+fallbackBtn.style.fontWeight = "700";
+
+fallbackBtn.onclick = () => withLoading(() => {
+  handleFallback();
+  issuesMenuEl.classList.remove("open");
+}, 200);
+
+issuesMenuEl.appendChild(fallbackBtn);
     }
 
     document.getElementById("doneBtn").onclick = () => withLoading(() => {
