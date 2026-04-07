@@ -393,7 +393,11 @@ To START the test, tap “Two-Way Voice Test” one more time (or tap Start Test
 
 When the voice finishes and it beeps, clearly say: “CORRECT CSID”.
 
-Then tap Done and tell me what happens.
+If it says "This concludes the test" The test was successful!
+
+If it says "You are now being connected to an operator" they will ask you for the CSID and then complete the test
+
+When that is done tap Done below
 
 CSID (if asked): ${csid}`;
           },
@@ -421,13 +425,14 @@ CSID (if asked): ${csid}`;
           name: "Set up PIN (and Users menu)",
           message: () => `Set up your PIN:
 
-1) Tap the 3 dots (bottom-right)
-2) Tap Users
-3) If it asks for a code, enter 2203
-4) Tap your name
-5) Tap the existing PIN
-6) Type your new 4-digit PIN → tap Save
-7) Re-enter the new PIN → tap Save
+1) Press the back button once, scroll up to the top and turn off the sounder (it should be greyed out)
+2)Tap the 3 dots (bottom-right)
+3) Tap Users
+4) If it asks for a code, enter 2203
+5) Tap your name
+6) Tap the existing PIN
+7) Type your new 4-digit PIN → tap Save
+8) Re-enter the new PIN → tap Save
 
 When that’s done, tap Done.`,
           ui: {
@@ -466,13 +471,15 @@ When finished, tap Done.`,
             issues: [
               { id: "will_this_sound", label: "Will this be loud / sound the alarm?" },
               { id: "duress_not_working", label: "2580 isn’t working to disarm" },
-              { id: "not_ready_to_arm", label: "System says not ready to arm" }
+              { id: "not_ready_to_arm", label: "System says not ready to arm" },
+              { id: "nothing_happens", label: "Nothing happens when I press PANIC" }
             ]
           },
           intents: [
             { id: "will_this_sound", response: "If the Sounder is off, it should not be loud." },
             { id: "duress_not_working", response: "That’s okay — just use your personal PIN to disarm for now." },
-            { id: "not_ready_to_arm", response: "That’s okay — you can tap “Arm Anyway” and enter your PIN. We can fix the warning later." }
+            { id: "not_ready_to_arm", response: "That’s okay — you can tap “Arm Anyway” and enter your PIN. We can fix the warning later." },
+            { id: "nothing_happens", response: "Make sure you are pressing and holding the button, if that still does not work try pressing and holding emergency or fire."}
           ]
         },
         {
