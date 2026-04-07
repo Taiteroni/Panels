@@ -200,20 +200,31 @@
   gap: 10px;
   font-family: sans-serif;
 }
+/* Container (optional, if you're using one) */
+.actions-container {
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+}
 
 /* Button row */
 .actions {
   display: flex;
   align-items: center;
-  gap: 20px; /* space between groups */
+  gap: 20px;
   padding: 10px 0;
+
+  /* Horizontal line under buttons */
+  border-bottom: 1px solid #ccc;
 }
 
+/* Button groups */
 .group {
   display: flex;
   gap: 10px;
 }
 
+/* Buttons */
 button {
   padding: 8px 16px;
   border: none;
@@ -223,18 +234,25 @@ button {
   transition: background-color 0.2s;
 }
 
+/* Primary button */
 button.primary {
   background-color: #4CAF50;
   color: white;
 }
-button.primary:hover { background-color: #45a049; }
+button.primary:hover {
+  background-color: #45a049;
+}
 
+/* Danger button */
 button.danger {
   background-color: #f44336;
   color: white;
 }
-button.danger:hover { background-color: #da190b; }
+button.danger:hover {
+  background-color: #da190b;
+}
 
+/* Default buttons */
 button:not(.primary):not(.danger) {
   background-color: #e0e0e0;
 }
@@ -242,25 +260,19 @@ button:not(.primary):not(.danger):hover {
   background-color: #d5d5d5;
 }
 
-/* Vertical divider only between button groups */
+/* Vertical divider between button groups */
 .divider-vertical {
   width: 1px;
   background-color: #ccc;
-  height: 36px; /* match button height */
-  margin: 0 10px; /* spacing from buttons */
+  height: 36px;
+  margin: 0 10px;
 }
 
-/* Horizontal dividers */
-.divider-horizontal {
-  height: 1px;
-  background-color: #ccc;
-  width: 100%;
-  margin: 10px 0; /* spacing around line */
-}
-
-/* Copy message section */
+/* Copy message section with horizontal lines above & below */
 .copy-message {
   padding: 10px 0;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
 }
   </style>
 </head>
@@ -307,20 +319,19 @@ button:not(.primary):not(.danger):hover {
         <div class="divider-horizontal"></div>
 
      <div class="row actions">
-    <div class="group primary-back">
-      <button class="primary" id="doneBtn">✅ Done</button>
-      <button id="backBtn">⬅️ Back one step</button>
-    </div>
-
-    <!-- Only vertical divider between button groups -->
-    <div class="divider-vertical"></div>
-
-    <div class="group other-actions">
-      <button id="issuesBtn">⚠️ I’m having an issue</button>
-      <button id="lostBtn">🧭 I can’t find that screen</button>
-      <button class="danger" id="escalateBtn">🚨 I need help from a person</button>
-    </div>
+  <div class="group primary-back">
+    <button class="primary" id="doneBtn">✅ Done</button>
+    <button id="backBtn">⬅️ Back one step</button>
   </div>
+
+  <div class="divider-vertical"></div>
+
+  <div class="group other-actions">
+    <button id="issuesBtn">⚠️ I’m having an issue</button>
+    <button id="lostBtn">🧭 I can’t find that screen</button>
+    <button class="danger" id="escalateBtn">🚨 I need help from a person</button>
+  </div>
+</div>
 
   <!-- Horizontal divider under button box -->
   <div class="divider-horizontal"></div>
