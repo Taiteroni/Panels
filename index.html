@@ -426,8 +426,8 @@ CSID (if asked): ${csid}`;
           message: () => `Set up your PIN:
 
 1) Press the back button once, scroll up to the top and turn off the sounder (it should be greyed out)
-2)Tap the 3 dots (bottom-right)
-3) Tap Users
+2) Press the back button two times
+3) Tap on Users on the left
 4) If it asks for a code, enter 2203
 5) Tap your name
 6) Tap the existing PIN
@@ -440,14 +440,16 @@ When that’s done, tap Done.`,
               { id: "cant_find_users", label: "I can’t find Users" },
               { id: "2203_didnt_work_here", label: "2203 didn’t work here" },
               { id: "pin_save_failed", label: "It won’t let me save / error saving PIN" },
-              { id: "updating_user_pin_stuck", label: "Stuck on updating user PIN" }
+              { id: "updating_user_pin_stuck", label: "Stuck on updating user PIN" },
+              { id: "user_gone", label: "I don't see my name"}
             ]
           },
           intents: [
             { id: "cant_find_users", response: "That’s okay. Tap Back until you’re on the Home Screen, then tap the 3 dots (bottom-right) and select Users." },
             { id: "2203_didnt_work_here", response: () => escalate("2203 failed at Users/PIN screen") },
             { id: "pin_save_failed", response: "Try the PIN again. If it still fails, back out, reboot the panel, then try again." },
-            { id: "updating_user_pin_stuck", response: "Tap “Stop”, then tap the X. Your new PIN should still be saved." }
+            { id: "updating_user_pin_stuck", response: "Tap “Stop”, then tap the X. Your new PIN should still be saved." },
+            { id: "user_gone", response: "If you don't see your name click add new user at the bottom and enter your name. Then click done and continue at Tap the existing pin" }
           ]
         },
         {
