@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Guided Setup</title>
+  <title>Vivint System Activation</title>
 
   <style>
     :root{
@@ -194,6 +194,59 @@
       .menu button{ padding: 14px; }
       .bigWrap{ min-height: 420px; }
     }
+    .actions {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* space between groups */
+  padding: 10px 0;
+}
+
+.group {
+  display: flex;
+  gap: 10px; /* space between buttons */
+}
+
+button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+button.primary {
+  background-color: #4CAF50;
+  color: white;
+}
+
+button.primary:hover {
+  background-color: #45a049;
+}
+
+button.danger {
+  background-color: #f44336;
+  color: white;
+}
+
+button.danger:hover {
+  background-color: #da190b;
+}
+
+button:not(.primary):not(.danger) {
+  background-color: #e0e0e0;
+}
+
+button:not(.primary):not(.danger):hover {
+  background-color: #d5d5d5;
+}
+
+.divider {
+  width: 1px;
+  background-color: #ccc;
+  height: 36px; /* match button height */
+  margin: 0 10px;
+}
   </style>
 </head>
 
@@ -210,7 +263,7 @@
 
   <div class="wrap">
     <div class="row topbar" style="justify-content: space-between;">
-      <h1 class="topbarTitle">Guided Setup</h1>
+      <h1 class="topbarTitle">Vivint System Activation</h1>
 
       <div class="row compact topbarPills">
         <span class="pill">Panel: <strong id="panelPill">Not set</strong></span>
@@ -239,12 +292,19 @@
         <div class="divider"></div>
 
         <div class="row actions">
-          <button class="primary" id="doneBtn">✅ Done</button>
-          <button id="backBtn">⬅️ Back one step</button>
-          <button id="issuesBtn">⚠️ I’m having an issue</button>
-          <button id="lostBtn">🧭 I can’t find that screen</button>
-          <button class="danger" id="escalateBtn">🚨 I need help from a person</button>
-        </div>
+  <div class="group primary-back">
+    <button class="primary" id="doneBtn">✅ Done</button>
+    <button id="backBtn">⬅️ Back one step</button>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="group other-actions">
+    <button id="issuesBtn">⚠️ I’m having an issue</button>
+    <button id="lostBtn">🧭 I can’t find that screen</button>
+    <button class="danger" id="escalateBtn">🚨 I need help from a person</button>
+  </div>
+</div>
 
         <div id="issuesMenu" class="menu"></div>
 
