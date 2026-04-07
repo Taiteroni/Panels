@@ -306,19 +306,34 @@ button:not(.primary):not(.danger):hover {
 
         <div class="divider-horizontal"></div>
 
-        <div class="row actions">
-  <div class="group primary-back">
-    <button class="primary" id="doneBtn">✅ Done</button>
-    <button id="backBtn">⬅️ Back one step</button>
+     <div class="row actions">
+    <div class="group primary-back">
+      <button class="primary" id="doneBtn">✅ Done</button>
+      <button id="backBtn">⬅️ Back one step</button>
+    </div>
+
+    <!-- Only vertical divider between button groups -->
+    <div class="divider-vertical"></div>
+
+    <div class="group other-actions">
+      <button id="issuesBtn">⚠️ I’m having an issue</button>
+      <button id="lostBtn">🧭 I can’t find that screen</button>
+      <button class="danger" id="escalateBtn">🚨 I need help from a person</button>
+    </div>
   </div>
 
-  <div class="divider-vertical"></div>
+  <!-- Horizontal divider under button box -->
+  <div class="divider-horizontal"></div>
 
-  <div class="group other-actions">
-    <button id="issuesBtn">⚠️ I’m having an issue</button>
-    <button id="lostBtn">🧭 I can’t find that screen</button>
-    <button class="danger" id="escalateBtn">🚨 I need help from a person</button>
+  <!-- Copy message section -->
+  <div class="copy-message">
+    <p>Here goes the copy message...</p>
   </div>
+
+  <!-- Horizontal divider after copy message -->
+  <div class="divider-horizontal"></div>
+
+</div>
 </div>
 
         <div id="issuesMenu" class="menu"></div>
