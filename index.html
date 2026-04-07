@@ -650,18 +650,6 @@ Or tap Done if you’re finished.`,
       openTempMessageThenReturnOnDone(txt);
     }
 
-    function handleFallback() {
-  const msg = `Thanks for trying that.
-
-Let’s take a different approach — I’m going to have you try this:
-
-${rebootForPanel(state.panel_type)}
-
-After that finishes, try the step again and tap Done.`;
-
-  openTempMessageThenReturnOnDone(msg);
-}
-
     function encodeB64Url(str) {
       return btoa(unescape(encodeURIComponent(str)))
         .replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/g, "");
@@ -775,17 +763,6 @@ After that finishes, try the step again and tap Done.`;
         }, 200);
         issuesMenuEl.appendChild(btn);
       });
-      // ✅ "That didn’t work" fallback button
-const fallbackBtn = document.createElement("button");
-fallbackBtn.textContent = "That didn’t work";
-fallbackBtn.style.fontWeight = "700";
-
-fallbackBtn.onclick = () => withLoading(() => {
-  handleFallback();
-  issuesMenuEl.classList.remove("open");
-}, 200);
-
-issuesMenuEl.appendChild(fallbackBtn);
     }
 
     document.getElementById("doneBtn").onclick = () => withLoading(() => {
